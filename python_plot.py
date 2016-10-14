@@ -1,3 +1,4 @@
+import os
 import pylab as py
 from scipy.integrate import odeint
 
@@ -7,6 +8,18 @@ delta = 1.
 gamma = 1.              # a, b, c and d are parameters of lotka-voltera model
 x_initial = [1.6, 1.6]  # Initial Value of prey and predator
 x_initial_iter = [[0.9, 0.9], [1.1, 1.1], [1.3, 1.3], [1.5, 1.5], [1.7, 1.7]]
+
+if os.path.isfile('./file.txt') == 'False':
+    print('3')
+
+with open('parameters.tex', 'w') as f:
+    f.truncate()
+    f.write(str("\ ".split()[0]) + "newcommand{\clp}{" + str(alpha) + "}\n")
+    f.write(str("\ ".split()[0]) + "newcommand{\cet}{" + str(beta) + "}\n")
+    f.write(str("\ ".split()[0]) + "newcommand{\del}{" + str(delta) + "}\n")
+    f.write(str("\ ".split()[0]) + "newcommand{\gam}{" + str(gamma) + "}\n")
+    f.write(str("\ ".split()[0]) + "newcommand{\init}{(" + str(x_initial[0])
+            + ", " + str(x_initial[1]) + ")}")
 
 
 def lotka_volterra(X, t=0):

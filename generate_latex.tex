@@ -3,15 +3,15 @@
 \usepackage{amsmath}
 \usepackage{graphics}
 \usepackage{graphicx}
-\usepackage{hyperref}
-
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
 \title{Lotka-Volterra Predator / Prey Model}
 \author{Raghav Gupta \\
 		Rollno. 153079005}
 
 \begin{document}
 
-\input{parameters.tex}
+%\input{parameters.tex}
 
 \maketitle
 \newpage
@@ -21,16 +21,17 @@
 \newpage
 
 \begin{abstract}
-The \clp \init
+The Lotka-Volterra model is composed of a pair of differential equations that describe predator-prey (or herbivore-plant, or parasitoid-host) dynamics in their simplest case (one predator population, one prey population). It was developed independently by Alfred Lotka and Vito Volterra in the 1920's, and is characterized by oscillations in the population size of both predator and prey, with the peak of the predator's oscillation lagging slightly behind the peak of the prey's oscillation. The model makes several simplifying assumptions: 1) the prey population will grow exponentially when the predator is absent; 2) the predator population will starve in the absence of the prey population (as opposed to switching to another type of prey); 3) predators can consume infinite quantities of prey; and 4) there is no environmental complexity (in other words, both populations are moving randomly through a homogeneous environment).
 \end{abstract}
 
 \newpage
-\section{Repository}
 \section{Dependencies}
-\section{Introduction}
-The Lotka–Volterra equations, also known as the predator–prey equations, are a pair of first-order, non-linear, differential equations frequently used to describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey. The populations change through time according to the pair of equations\cite{greenwade93}
+\section{Repository of project}
+The source code for the project is given below, \\
+\url{https://github.com/raghavgupta0110/lotka-volterra-predator-prey-model.git}
 
-\url{http://www.sharelatex.com}
+\section{Introduction}
+The Lotka–Volterra equations, also known as the predator–prey equations, are a pair of first-order, non-linear, differential equations frequently used to describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey. The populations change through time according to the pair of equations:
 
 \begin{equation*}
 \dfrac{dx}{dt} = \alpha x - \beta xy
@@ -38,6 +39,27 @@ The Lotka–Volterra equations, also known as the predator–prey equations, are
 \begin{equation*}
 \dfrac{dy}{dt} = \delta x - \gamma xy
 \end{equation*}
+
+where,
+
+\begin{enumerate}
+\item $x$ is the number of prey (for example, rabbits);
+\item $y$ is the number of some predator (for example, foxes);
+\item $ \dfrac{dy}{dt} ~ \text{and} ~\dfrac{dx}{dt}$ represent the growth rates of the two populations over time;
+\item t represents time; and
+\item $\alpha , ~\beta , ~\delta , ~\gamma$ are positive real parameters describing the interaction of the two species.
+
+\end{enumerate}
+
+The Lotka–Volterra system of equations is an example of a Kolmogorov model,\cite{ref1}\cite{ref2}\cite{ref3} which is a more general framework that can model the dynamics of ecological systems with predator-prey interactions, competition, disease, and mutualism.
+
+\section{History}
+
+The Lotka–Volterra predator–prey model was initially proposed by Alfred J. Lotka in the theory of autocatalytic chemical reactions in 1910.\cite{ref4}\cite{ref5} This was effectively the logistic equation,\cite{ref6} which was originally derived by Pierre François Verhulst.\cite{ref7} In 1920 Lotka extended, via Kolmogorov (see above), the model to "organic systems" using a plant species and a herbivorous animal species as an example and in 1925 he utilised the equations to analyse predator-prey interactions in his book on biomathematics. The same set of equations were published in 1926 by Vito Volterra, a mathematician and physicist who had become interested in mathematical biology.\cite{ref5} Volterra's enquiry was inspired through his interactions with the marine biologist Umberto D'Ancona who was courting his daughter at the time and later was to become his son-in-law. D'Ancona studied the fish catches in the Adriatic Sea and had noticed that the percentage of predatory fish caught had increased during the years of World War I (1914–18). This puzzled him as the fishing effort had been very much reduced during the war years. Volterra developed his model independently from Lotka and used it to explain d'Ancona's observation.
+
+The model was later extended to include density dependent prey growth and a functional response of the form developed by C.S. Holling; a model that has become known as the Rosenzweig-McArthur model. Both the Lotka–Volterra and Rosenzweig-MacArthur models have been used to explain the dynamics of natural populations of predators and prey, such as the lynx and snowshoe hare data of the Hudson Bay Company[14] and the moose and wolf populations in Isle Royale National Park.\cite{8}
+
+In the late 1980s an alternative to the Lotka–Volterra predator-prey model (and its common prey dependent generalizations) emerged, the ratio dependent or Arditi–Ginzburg model.[16] The validity of prey or ratio dependent models has been much debated.
 
 \begin{figure}[h]
 \begin{center}

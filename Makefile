@@ -22,4 +22,4 @@ $(pic): python_plot.py
 clean :
 
 	rm $(pic) *.aux *.lof *.log *.pdf *.toc *.bbl *.blg \
-	*.out 
+	*.out *~

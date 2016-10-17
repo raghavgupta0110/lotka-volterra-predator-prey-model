@@ -1,6 +1,9 @@
 import pylab as py
 from scipy.integrate import odeint
 
+
+# parameters
+
 alpha = 2/3
 beta = 4/3
 delta = 1.
@@ -49,6 +52,8 @@ def solve_diff(x_init, t_start=0, t_end=20, t_num=300):
 
 [prey, predator, t] = solve_diff(x_initial)
 
+
+# font name and size
 size_lab = 12           # font size of label.
 size_tit = 14           # font size of title.
 color_lab = 'black'     # label color.
@@ -74,6 +79,7 @@ py.title('Evolution of Prey and Predator populations', fontsize=size_tit,
 
 f1.savefig('prey_and_predator.png')
 
+# Marker and linewidth
 
 m_l = [['D', 1, 1], ['D', 1, 1], ['D', 1, 1], ['D', 1, 1],
        ['D', 1, 1], ['D', 1, 1]]
